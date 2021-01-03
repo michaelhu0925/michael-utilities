@@ -146,6 +146,8 @@ client.on('ready',() => {
             .setFooter('Made By Michaelhu0925#0925')
             .setThumbnail('https://cdn.discordapp.com/avatars/696211031579688971/499c9f5121d623e5db56c0583e5a4309.png?size=128')
             .setColor('#58b9ff')
+
+        message.channel.send(embed)
     })
 })
 
