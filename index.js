@@ -69,8 +69,6 @@ client.on('ready',() => {
 
     command(client, 'status', message=> {
         const content = message.content.replace('>status ', '')
-
-        const { member } = message
         if (message.member.hasPermission('ADMINISTATOR')) {
             client.user.setPresence({
                 activity: {
@@ -78,8 +76,6 @@ client.on('ready',() => {
                     type: 2,
                 },
             })
-        }else{
-            message.channel.send(`<@${member.id}> You do not have permission to use that.`)
         }
     })
 
