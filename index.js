@@ -69,6 +69,8 @@ client.on('ready',() => {
 
     command(client, 'status', message=> {
         const content = message.content.replace('>status ', '')
+
+        const { member } = message
         if (message.member.hasPermission('ADMINISTATOR')) {
             client.user.setPresence({
                 activity: {
@@ -76,6 +78,8 @@ client.on('ready',() => {
                     type: 2,
                 },
             })
+        }else{
+            message.channel.send(`<@${member.id}> You do not have permission to use that.`)
         }
     })
 
@@ -148,6 +152,17 @@ client.on('ready',() => {
             .setColor('#58b9ff')
 
         message.channel.send(embed)
+    })
+
+    command(client, ['ban', 'b'], message => {
+        const { member, mentions } = message
+
+        if (member.hasPermission('ADMIN') ||
+         member.hasPermission('BAN_MEMBER')) {
+
+        } else {
+            message.channel.send(`<@${member.id}> Your do not have permission to use this command.`)
+        }
     })
 })
 
