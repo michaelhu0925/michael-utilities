@@ -33,6 +33,10 @@ client.on('ready',() => {
             inline: false
         },
         {
+            name: 'update',
+            value: 'Check the latest bot update or updates that is going to get pushed shortly.'
+        },
+        {
             name: 'createtextchannel',
             value: 'Create a text channel',
             inline: false
@@ -142,7 +146,6 @@ client.on('ready',() => {
     command(client, 'update', message => {
         const embed = new discord.MessageEmbed()
             .setTitle('Bot Update:')
-            .setDescription('The bot is now hosting 24/7!')
             .setDescription('Likely adding a modmail feature in the next coming update! #hype')
             .setFooter('Made By Michaelhu0925#0925')
             .setThumbnail('https://cdn.discordapp.com/avatars/696211031579688971/499c9f5121d623e5db56c0583e5a4309.png?size=128')
@@ -150,6 +153,8 @@ client.on('ready',() => {
 
         message.channel.send(embed)
     })
+
+    
 
     command(client, ['ban', 'b'], message => {
         const { member, mentions } = message
