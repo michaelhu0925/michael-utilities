@@ -143,6 +143,7 @@ client.on('ready',() => {
         const embed = new discord.MessageEmbed()
             .setTitle('Bot Update:')
             .setDescription('The bot is now hosting 24/7!')
+            .setDescription('Likely adding a modmail feature in the next coming update! #hype')
             .setFooter('Made By Michaelhu0925#0925')
             .setThumbnail('https://cdn.discordapp.com/avatars/696211031579688971/499c9f5121d623e5db56c0583e5a4309.png?size=128')
             .setColor('#58b9ff')
