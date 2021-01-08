@@ -34,7 +34,7 @@ client.on('ready',() => {
         },
         {
             name: 'update',
-            value: 'Check the latest bot update or updates that is going to get pushed shortly.'
+            value: 'Check the latest bot update'
         },
         {
             name: 'createtextchannel',
