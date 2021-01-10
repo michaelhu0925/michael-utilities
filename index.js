@@ -2,8 +2,8 @@ const discord = require('discord.js')
 const client = new discord.Client()
 const db = require("quick.db");
 
-let botRole = [730718555506475110]
-let modRole = [742342356463910922, 741510597832736839, 787988693896921108, 741511048632336425];
+let botRole = ['730718555506475110']
+let modRole = ['742342356463910922', '741510597832736839', '787988693896921108', '741511048632336425'];
 
 const config = require('./config.json')
 const privateMessage = require('./private-message')
