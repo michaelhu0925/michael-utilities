@@ -170,8 +170,18 @@ client.on('ready',() => {
     command(client, ['copyright','shoutout'], message => {
         const embed = new discord.MessageEmbed()
             .setTitle('Shoutouts:')
-            .addField('*Server:* **Michaelhu0925#0925**')
-            .addField('*Server Icon* **Xrana#5900**')
+            .addFields({
+                name: 'Server Owner:',
+                value: 'Michaelhu0925',
+                inline: false
+            },
+            
+            {
+                name: 'Server Icon:',
+                value: 'Xrana#5900',
+                inline: false
+            }
+            )
             .setThumbnail('https://cdn.discordapp.com/avatars/696211031579688971/499c9f5121d623e5db56c0583e5a4309.png?size=128')
             .setFooter('Made By Michaelhu0925#0925')
             .setColor('#58b9ff')
