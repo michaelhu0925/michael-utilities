@@ -162,6 +162,7 @@ client.on('ready',() => {
         if (member.hasPermission('ADMIN') ||
          member.hasPermission('BAN_MEMBER')) {
             console.log('Works')
+            message.channel.send('Works')
         } else {
             message.channel.send(`<@${member.id}> Your do not have permission to use this command.`)
         }
