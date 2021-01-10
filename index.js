@@ -159,12 +159,20 @@ client.on('ready',() => {
     command(client, ['ban', 'b'], message => {
         const { member, mentions } = message
 
+        const tag = `<@${member.id}>`
+
         if (member.hasPermission('ADMIN') ||
          member.hasPermission('BAN_MEMBER')) {
             const target = mentions.users.first()
-            console.log(target)
+            if (target) {
+                const targetMember = message.guild.members.cache.get(target.id)
+                targetMember.ban()
+                message.channel.send(`${targetMember} has been banned successfully.`)
+            } else {
+                message.channel.send(`${tag} Please specify someone to ban.`)
+            }
         } else {
-            message.channel.send(`<@${member.id}> Your do not have permission to use this command.`)
+            message.channel.send(`${tag} Your do not have permission to use this command.`)
         }
     })
 
