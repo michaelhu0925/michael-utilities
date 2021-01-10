@@ -162,7 +162,7 @@ client.on('ready',() => {
         if (member.hasPermission('ADMIN') ||
          member.hasPermission('BAN_MEMBER')) {
             const target = mentions.users.first()
-            message.channel.send(target)
+            console.log(target)
         } else {
             message.channel.send(`<@${member.id}> Your do not have permission to use this command.`)
         }
