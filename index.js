@@ -166,6 +166,18 @@ client.on('ready',() => {
             message.channel.send(`<@${member.id}> Your do not have permission to use this command.`)
         }
     })
+
+    command(client, ['copyright','shoutout'], message => {
+        const embed = new discord.MessageEmbed()
+            .setTitle('Shoutouts:')
+            .addField('*Server:* **Michaelhu0925#0925**')
+            .addField('*Server Icon* **Xrana#5900**')
+            .setThumbnail('https://cdn.discordapp.com/avatars/696211031579688971/499c9f5121d623e5db56c0583e5a4309.png?size=128')
+            .setFooter('Made By Michaelhu0925#0925')
+            .setColor('#58b9ff')
+
+        message.channel.send(embed)
+    })
 })
 
 client.login(process.env.token)
