@@ -161,7 +161,7 @@ client.on('ready',() => {
 
         if (member.hasPermission('ADMIN') ||
          member.hasPermission('BAN_MEMBER')) {
-
+            console.log('Works')
         } else {
             message.channel.send(`<@${member.id}> Your do not have permission to use this command.`)
         }
@@ -172,7 +172,7 @@ client.on('ready',() => {
             .setTitle('Shoutouts:')
             .addFields({
                 name: 'Server Owner:',
-                value: 'Michaelhu0925',
+                value: 'Michaelhu0925#0925',
                 inline: false
             },
             
