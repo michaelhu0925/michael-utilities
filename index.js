@@ -241,61 +241,6 @@ client.on("message", async message => {
         return supportUser.send(wdw);
       }
       
-      // block a user
-      if(message.content.startsWith(`${prefix}block`)){
-      var args = message.content.split(" ").slice(1)
-        let reason = args.join(" ");
-        if(!reason) reason = `Unspecified.`
-        let user = client.users.fetch(`${support.targetID}`); // djs want a string here
-        const blocked = new Discord.MessageEmbed()
-          .setColor("RED").setAuthor(user.tag)
-          .setTitle("**User blocked**")
-          .addField("Channel", `<#${message.channel.id}>`, true)
-          .addField("Reason", reason, true)
-        if(log){
-          client.channels.cache.get(log).send({embed: blocked})
-        }
-        let isBlock = await table.get(`isBlocked${support.targetID}`);
-        
-        const wdw = new Discord.MessgageEmbed()
-        .setColor('RED')
-        .setTimestamp()
-        .setTitle('**Error!**')
-        .setDescription('The user is already blocked')
-        if(isBlock === true) return message.channel.send(wdw)
-        await table.set(`isBlocked${support.targetID}`, true);
-        var c = new Discord.MessageEmbed()
-        .setDescription("The user can not use the modmail anymore; they have been blocked. You may now close the ticket or unblock them to continue")
-        .setColor("RED").setTimestamp()
-        message.channel.send({embed: c});
-        return;
-      }
-      
-      // unblock a user
-      if(message.content.startsWith(`${prefix}unblock`)){
-        let isBlock = await table.get(`isBlocked${support.targetID}`);
-        const w = new Discord.MessageEmbed()
-        .setColor('RED')
-        .setTimestamp()
-        .setTitle('**Error!**')
-        .setDescription('User wasn\'t blocked')
-        
-        if(isBlock === false || !isBlock || isBlock === null) return message.channel.send("User wasn't blocked")
-        let user = client.users.fetch(`${support.targetID}`); // djs want a string here
-        const unBlock = new Discord.MessageEmbed()
-          .setColor("RED").setAuthor(user.tag)
-          .setTitle("**User Unblocked**")
-        if(log){
-          client.channels.cache.get(log).send({embed: unBlock})
-        }
-        await table.delete(`isBlocked${support.targetID}`);
-        var c = new Discord.MessageEmbed()
-        .setDescription("The user has successfully been unblocked!")
-        .setColor("GREEN").setTimestamp()
-        message.channel.send({embed: c});
-        return
-      }
-      
       // complete
       if(message.content.toLowerCase() === `${prefix}complete`){
           var embed = new Discord.MessageEmbed()
