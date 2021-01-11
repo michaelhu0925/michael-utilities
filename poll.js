@@ -1,7 +1,7 @@
 module.exports = client => {
     const channelIds = [
-        740070068628619286, //new content
-        732067496315846707,
+        '740070068628619286', //new content
+        '732067496315846707',
     ]
 
     const addReactions = message => {
