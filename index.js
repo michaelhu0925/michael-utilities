@@ -4,6 +4,7 @@ const client = new discord.Client()
 const config = require('./config.json')
 const privateMessage = require('./private-message')
 const command = require('./command')
+const poll = require('./poll')
 
 client.on('ready',() => {
     console.log('All prepared, my boss')
@@ -224,6 +225,8 @@ client.on('ready',() => {
             .setTimestamp()
             .setColor()
     })
+
+    poll(client)
 })
 
 client.login(process.env.token)
