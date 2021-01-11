@@ -1,6 +1,10 @@
 const discord = require('discord.js')
 const client = new discord.Client()
 
+const config = require('./config.json')
+const privateMessage = require('./private-message')
+const command = require('./command')
+
 client.on('ready',() => {
     console.log('All prepared, my boss')
 
@@ -217,7 +221,7 @@ client.on('ready',() => {
     command(client, ['ri','roleinfo','rolesinfo'], message=> {
         const embed = new discord.MessageEmbed()
             .setTitle('Role Info')
-            .setTimestamp('')
+            .setTimestamp()
             .setColor()
     })
 })
