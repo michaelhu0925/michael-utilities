@@ -483,6 +483,13 @@ client.on('ready',() => {
 
         message.channel.send(embed)
     })
+
+    command(client, ['ri','roleinfo','rolesinfo'], message=> {
+        const embed = new discord.MessageEmbed()
+            .setTitle('Role Info')
+            .setTimestamp('')
+            .setColor()
+    })
 })
 
 client.login(process.env.token)
