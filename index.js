@@ -1,4 +1,5 @@
 const discord = require('discord.js')
+const db = require("quick.db");
 const client = new discord.Client()
 
 let botRole = ['730718555506475110']
