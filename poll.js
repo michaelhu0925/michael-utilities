@@ -12,7 +12,7 @@ module.exports = (client) => {
         }, 750);
     }
 
-        client.on('message', async, (message) => {
+        client.on('message', async (message) => {
             if (channelIds.includes(message.channel.id)) {
                 addReactions(message)
             } else if (message.content.toLowerCase() === '>poll') {
