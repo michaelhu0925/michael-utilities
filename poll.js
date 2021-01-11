@@ -10,11 +10,11 @@ module.exports = (client) => {
         setTimeout(() => {
             message.react('👎')
         }, 750);
+    }
 
         client.on('message', message => {
             if (channelIds.includes(message.channel.id)) {
                 addReactions(message)
             }
         })
-    }
 }
