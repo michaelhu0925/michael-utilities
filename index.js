@@ -5,7 +5,6 @@ const config = require('./config.json')
 const privateMessage = require('./private-message')
 const command = require('./command')
 const poll = require('./poll')
-const welcome = require('./welcome')
 
 client.on('ready',() => {
     console.log('All prepared, my boss')
@@ -228,8 +227,6 @@ client.on('ready',() => {
     })
 
     poll(client)
-
-    welcome(client)
 })
 
 client.login(process.env.token)
