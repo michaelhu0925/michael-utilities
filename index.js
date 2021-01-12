@@ -231,7 +231,6 @@ client.on('ready',() => {
 
     const guild = client.guilds.cache.get('730717877056831528 ')
     const channel = guild.channels.cache.get('730717878046818368')
-    const time = 10
 
     sendMessage(channel, 'Bot Prepared', 3)
 })
