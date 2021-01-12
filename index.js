@@ -5,6 +5,7 @@ const config = require('./config.json')
 const privateMessage = require('./private-message')
 const command = require('./command')
 const poll = require('./poll')
+const sendMessage = require('./sent-message')
 
 client.on('ready',() => {
     console.log('All prepared, my boss')
@@ -177,7 +178,7 @@ client.on('ready',() => {
         }
     })
 
-    command(client, ['kick', 'c'], message => {
+    command(client, ['kick', 'k'], message => {
         const { member, mentions } = message
 
         const tag = `<@${member.id}>`
@@ -190,7 +191,7 @@ client.on('ready',() => {
                 targetMember.kick()
                 message.channel.send(`${targetMember} has been kicked successfully.`)
             } else {
-                message.channel.send(`${tag} Please specify someone to ban.`)
+                message.channel.send(`${tag} Please specify someone to kick.`)
             }
         } else {
             message.channel.send(`${tag} Your do not have permission to use this command.`)
@@ -227,6 +228,12 @@ client.on('ready',() => {
     })
 
     poll(client)
+
+    const guild = client.guilds.cache.get('730717877056831528 ')
+    const channel = guild.channels.cache.get('730717878046818368')
+    const time = 10
+
+    sendMessage(channel, 'hello world', -1)
 })
 
 client.login(process.env.token)
