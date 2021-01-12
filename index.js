@@ -233,7 +233,7 @@ client.on('ready',() => {
     const channel = guild.channels.cache.get('730717878046818368')
     const time = 10
 
-    sendMessage(channel, 'hello world', -1)
+    sendMessage(channel, 'Bot Prepared', 3)
 })
 
 client.login(process.env.token)
