@@ -5,8 +5,10 @@ const config = require('./config.json')
 const privateMessage = require('./private-message')
 const command = require('./command')
 const poll = require('./poll')
+const mongo = require('./mongo')
+const { Mongoose } = require('mongoose')
 
-client.on('ready',() => {
+client.on('ready', async () => {
     console.log('All prepared, my boss')
 
     const embed = new discord.MessageEmbed()
@@ -229,6 +231,14 @@ client.on('ready',() => {
     })
 
     poll(client)
+
+    await mongo().then(Mongoose => {
+        try {
+            console.log('Connected to mongo!')
+        } finally {
+            Mongoose.connection.close()
+        }
+    })
 })
 
 client.login(process.env.token)
