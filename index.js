@@ -225,6 +225,8 @@ client.on('ready',() => {
             .setTitle('Role Info')
             .setTimestamp()
             .setColor()
+
+        message.channel.send(embed)
     })
 
     poll(client)
