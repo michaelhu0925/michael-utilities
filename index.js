@@ -5,7 +5,6 @@ const config = require('./config.json')
 const privateMessage = require('./private-message')
 const command = require('./command')
 const poll = require('./poll')
-const sendMessage = require('./sent-message')
 
 client.on('ready',() => {
     console.log('All prepared, my boss')
@@ -230,11 +229,6 @@ client.on('ready',() => {
     })
 
     poll(client)
-
-    const guild = client.guilds.cache.get('730717877056831528 ')
-    const channel = guild.channels.cache.get('730717878046818368')
-
-    sendMessage(channel, 'Bot Prepared', 3)
 })
 
 client.login(process.env.token)
