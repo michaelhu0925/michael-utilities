@@ -237,6 +237,8 @@ client.on('ready', async () => {
         .setDescription(`This bot is currently running on version ${version}`)
         .setTimestamp()
         .setColor()
+
+        message.channel.send(embed)
     })
 })
 
