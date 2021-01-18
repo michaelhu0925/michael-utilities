@@ -5,8 +5,6 @@ const config = require('./config.json')
 const privateMessage = require('./private-message')
 const command = require('./command')
 const poll = require('./poll')
-const mongo = require('./mongo')
-const { Mongoose } = require('mongoose')
 const version = '1.1 A Beta'
 
 client.on('ready', async () => {
@@ -232,14 +230,6 @@ client.on('ready', async () => {
     })
 
     poll(client)
-
-    await mongo().then(Mongoose => {
-        try {
-            console.log('Connected to mongo!')
-        } finally {
-            Mongoose.connection.close()
-        }
-    })
 
     command(client, 'version', message => {
         const embed = new discord.MessageEmbed()
