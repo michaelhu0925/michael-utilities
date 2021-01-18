@@ -7,6 +7,7 @@ const command = require('./command')
 const poll = require('./poll')
 const mongo = require('./mongo')
 const { Mongoose } = require('mongoose')
+const version = '1.1 A Beta'
 
 client.on('ready', async () => {
     console.log('All prepared, my boss')
@@ -221,7 +222,7 @@ client.on('ready', async () => {
         message.channel.send(embed)
     })
 
-    command(client, ['ri','roleinfo','rolesinfo'], message=> {
+    command(client, ['ri','roleinfo','rolesinfo'], message => {
         const embed = new discord.MessageEmbed()
             .setTitle('Role Info')
             .setTimestamp()
@@ -238,6 +239,14 @@ client.on('ready', async () => {
         } finally {
             Mongoose.connection.close()
         }
+    })
+
+    command(client, 'version', message => {
+        const embed = new discord.MessageEmbed()
+        .setTitle('Version:')
+        .setDescription(`This bot is currently running on version ${version}`)
+        .setTimestamp()
+        .setColor()
     })
 })
 
