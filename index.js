@@ -5,7 +5,7 @@ const config = require('./config.json')
 const privateMessage = require('./private-message')
 const command = require('./command')
 const poll = require('./poll')
-const version = '1.1 A Beta'
+const version = 'Version: 1.1'
 
 client.on('ready', async () => {
     console.log('All prepared, my boss')
@@ -50,6 +50,7 @@ client.on('ready', async () => {
         }
         )
         .setFooter('Made By Michaelhu0925#0925')
+        .setTimestamp(`${version}`)
         .setThumbnail('https://cdn.discordapp.com/avatars/696211031579688971/499c9f5121d623e5db56c0583e5a4309.png?size=128')
 
     privateMessage(client, 'help', embed) 
@@ -124,6 +125,7 @@ client.on('ready', async () => {
             .setTitle(`${name}`)
             .setThumbnail(icon)
             .setColor('#58b9ff')
+            .setFooter('Made By Michaelhu0925#0925')
             .addFields({
                 name: 'Region',
                 value: region,
@@ -152,6 +154,7 @@ client.on('ready', async () => {
             .setFooter('Made By Michaelhu0925#0925')
             .setThumbnail('https://cdn.discordapp.com/avatars/696211031579688971/499c9f5121d623e5db56c0583e5a4309.png?size=128')
             .setColor('#58b9ff')
+            .setTimestamp(`${version}`)
 
         message.channel.send(embed)
     })
@@ -215,7 +218,9 @@ client.on('ready', async () => {
             )
             .setThumbnail('https://cdn.discordapp.com/avatars/696211031579688971/499c9f5121d623e5db56c0583e5a4309.png?size=128')
             .setFooter('Made By Michaelhu0925#0925')
+            .setTimestamp(`${version}`)
             .setColor('#58b9ff')
+            
 
         message.channel.send(embed)
     })
@@ -234,7 +239,7 @@ client.on('ready', async () => {
     command(client, 'version', message => {
         const embed = new discord.MessageEmbed()
         .setTitle('Version:')
-        .setDescription(`This bot is currently running on version ${version}`)
+        .setDescription(`${version}`)
         .setTimestamp()
         .setColor()
 
