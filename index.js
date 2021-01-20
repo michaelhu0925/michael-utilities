@@ -36,7 +36,8 @@ client.on('ready', async () => {
         },
         {
             name: 'update',
-            value: 'Check the latest bot update'
+            value: 'Check the latest bot update',
+            inline: false
         },
         {
             name: 'createtextchannel',
@@ -47,10 +48,30 @@ client.on('ready', async () => {
             name: 'createvoicechannel',
             value: 'Create a voice channel',
             inline: false
+        },
+        {
+            name: 'roleinfo/ri',
+            value: 'Look at the information for every role',
+            inline: false
+        },
+        {
+            name: 'versrion',
+            value: 'Check the bot version',
+            inline: false
+        },
+        {
+            name: 'ban/b',
+            value: 'Bans a member',
+            inline: false
+        },
+        {
+            name: 'kick/k',
+            value: 'Kicks a member',
+            inline: false
         }
         )
-        .setFooter('Made By Michaelhu0925#0925')
-        .setTimestamp(`${version}`)
+        .setFooter(`Made By Michaelhu0925#0925 ${version}`)
+        .setTimestamp()
         .setThumbnail('https://cdn.discordapp.com/avatars/696211031579688971/499c9f5121d623e5db56c0583e5a4309.png?size=128')
 
     privateMessage(client, 'help', embed) 
@@ -115,7 +136,7 @@ client.on('ready', async () => {
         message.channel.send(embed)
     })
 
-    command(client, 'serverinfo', message => {
+    command(client, ['serverinfo', 'si'], message => {
         const { guild } = message
 
         const { name, region, memberCount, owner, afkTimeout } = guild
@@ -125,7 +146,7 @@ client.on('ready', async () => {
             .setTitle(`${name}`)
             .setThumbnail(icon)
             .setColor('#58b9ff')
-            .setFooter('Made By Michaelhu0925#0925')
+            .setFooter(`Made By Michaelhu0925#0925 ${version}`)
             .addFields({
                 name: 'Region',
                 value: region,
@@ -151,10 +172,10 @@ client.on('ready', async () => {
         const embed = new discord.MessageEmbed()
             .setTitle('Bot Update:')
             .setDescription('Likely adding a modmail feature in the next coming update! #hype')
-            .setFooter('Made By Michaelhu0925#0925')
+            .setFooter(`Made By Michaelhu0925#0925 ${version}`)
             .setThumbnail('https://cdn.discordapp.com/avatars/696211031579688971/499c9f5121d623e5db56c0583e5a4309.png?size=128')
             .setColor('#58b9ff')
-            .setTimestamp(`${version}`)
+            .setTimestamp()
 
         message.channel.send(embed)
     })
@@ -217,8 +238,8 @@ client.on('ready', async () => {
             }
             )
             .setThumbnail('https://cdn.discordapp.com/avatars/696211031579688971/499c9f5121d623e5db56c0583e5a4309.png?size=128')
-            .setFooter('Made By Michaelhu0925#0925')
-            .setTimestamp(`${version}`)
+            .setFooter(`Made By Michaelhu0925#0925 ${version}`)
+            .setTimestamp()
             .setColor('#58b9ff')
             
 
@@ -228,6 +249,7 @@ client.on('ready', async () => {
     command(client, ['ri','roleinfo','rolesinfo'], message => {
         const embed = new discord.MessageEmbed()
             .setTitle('Role Info')
+            .setFooter(`Made By Michaelhu0925#0925 ${version}`)
             .setTimestamp()
             .setColor()
 
