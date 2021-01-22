@@ -251,7 +251,8 @@ client.on('ready', async () => {
             .setTitle('Role Info')
             .setDescription('Here are all the roles that you can get in the server:')
             .addFields({
-                name: '<@&734244543049891880>: Get access to <#734293466506330113>'
+                name: 'Level Roles',
+                value: '<@&734244543049891880>: Get access to <#734293466506330113>'
             })
             .setFooter(`Made By Michaelhu0925#0925 ${version}`)
             .setTimestamp()
