@@ -13,7 +13,7 @@ const eval = require('./eval')
 client.on('ready', async () => {
     console.log('All prepared, my boss')
 
-    const baseFile = 'command-bas.js'
+    const baseFile = 'command-base.js'
     const commandBase = require(`./commands/${baseFile}`)
 
     const readCommands = dir => {
