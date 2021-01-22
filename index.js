@@ -107,7 +107,7 @@ client.on('ready', async () => {
         }
     })
 
-    command(client, 'createtextchannel', (message) => {
+    command(client, ['createtextchannel', 'ctc'], (message) => {
         const name = message.content.replace('>createtextchannel ', '')
         if (message.member.hasPermission('ADMINISTATOR')){
             message.guild.channels
@@ -120,7 +120,7 @@ client.on('ready', async () => {
         }
     })
 
-    command(client, 'createvoicechannel', (message) => {
+    command(client, ['createvoicechannel', 'cvc'], (message) => {
         const name = message.content.replace('>createvoicechannel ', '')
         if (message.member.hasPermission('ADMINISTATOR')){
             message.guild.channels.create(name, {
