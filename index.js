@@ -7,7 +7,7 @@ const config = require('./config.json')
 const privateMessage = require('./private-message')
 const command = require('./command')
 const poll = require('./poll')
-const version = 'Version: 1.1'
+const version = 'Version: 1.2 Beta'
 const eval = require('./eval')
 
 client.on('ready', async () => {
