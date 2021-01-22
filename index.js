@@ -55,7 +55,7 @@ client.on('ready', async () => {
             inline: false
         },
         {
-            name: 'versrion',
+            name: 'version',
             value: 'Check the bot version',
             inline: false
         },
