@@ -6,6 +6,7 @@ const privateMessage = require('./private-message')
 const command = require('./command')
 const poll = require('./poll')
 const version = 'Version: 1.1'
+const eval = require('./eval')
 
 client.on('ready', async () => {
     console.log('All prepared, my boss')
@@ -272,6 +273,8 @@ client.on('ready', async () => {
 
         message.channel.send(embed)
     })
+
+    eval(client)
 })
 
 client.login(process.env.token)
