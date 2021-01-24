@@ -116,18 +116,6 @@ client.on('ready', async () => {
         }
     })
 
-    command(client, 'status', message=> {
-        const content = message.content.replace('>status ', '')
-        if (message.member.hasPermission('ADMINISTATOR')) {
-            client.user.setPresence({
-                activity: {
-                    name: content,
-                    type: 2,
-                },
-            })
-        }
-    })
-
     command(client, 'help', (message) => {
         console.log(message.author)
 

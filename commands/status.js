@@ -1,3 +1,5 @@
+const discord = require('discord.js')
+const client = new discord.Client()
 module.exports = {
     commands: status,
     expectedArgs: '<status>',
