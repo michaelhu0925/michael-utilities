@@ -1,5 +1,7 @@
+
+const client = new discord.Client()
 module.exports = {
-    commands: ['s', 'status'],
+    commands: status,
     expectedArgs: '<status>',
     permissionError: 'You need do not have permissions to run this command',
     minArgs: 1,
