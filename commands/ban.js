@@ -16,5 +16,4 @@ module.exports = {
         }
     },
     permissions: 'BAN_MEMBERS',
-    requiredRoles: [''],
   }
