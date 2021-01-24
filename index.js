@@ -201,26 +201,6 @@ client.on('ready', async () => {
         message.channel.send(embed)
     })
 
-    command(client, ['kick', 'k'], message => {
-        const { member, mentions } = message
-
-        const tag = `<@${member.id}>`
-
-        if (member.hasPermission('ADMIN') ||
-         member.hasPermission('KICK_MEMBER')) {
-            const target = mentions.users.first()
-            if (target) {
-                const targetMember = message.guild.members.cache.get(target.id)
-                targetMember.kick()
-                message.channel.send(`${targetMember} has been kicked successfully.`)
-            } else {
-                message.channel.send(`${tag} Please specify someone to kick.`)
-            }
-        } else {
-            message.channel.send(`${tag} Your do not have permission to use this command.`)
-        }
-    })
-
     command(client, ['copyright','shoutout'], message => {
         const embed = new discord.MessageEmbed()
             .setTitle('Shoutouts:')
