@@ -128,16 +128,6 @@ client.on('ready', async () => {
         }
     })
 
-    command(client, ['createvoicechannel', 'cvc'], (message) => {
-        const name = message.content.replace('>createvoicechannel ', '')
-        if (message.member.hasPermission('ADMINISTATOR')){
-            message.guild.channels.create(name, {
-                type: 'voice'
-            })
-            .then(channel => {})
-        }
-    })
-
     command(client, 'help', (message) => {
         console.log(message.author)
 

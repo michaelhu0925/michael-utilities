@@ -1,13 +1,13 @@
 module.exports = {
-    commands: ['ctc', 'createtextchannel'],
+    commands: ['cvc', 'createvoicechannel'],
     expectedArgs: '<channel name>',
     permissionError: 'You need do not have permissions to run this command',
     minArgs: 1,
     maxArgs: 2,
     callback: (message, arguments, text) => {
-        const name = message.content.replace('>createtextchannel ', '')
+        const name = message.content.replace('>createvoicechannel ', '')
         message.guild.channels.create(name, {
-                type: 'text'
+                type: 'voice'
             })
             .then(channel => {})
     },
