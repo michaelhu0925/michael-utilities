@@ -1,14 +1,14 @@
 const discord = require('discord.js')
 const client = new discord.Client()
 module.exports = {
-    commands: status,
+    commands: 'status',
     expectedArgs: '<status>',
     permissionError: 'You need do not have permissions to run this command',
     minArgs: 1,
     maxArgs: 2,
     callback: (message, arguments, text) => {
         const content = message.content.replace('>status ', '')
-            .setPresence({
+            client.user.setPresence({
                 activity: {
                     name: content,
                     type: 2,
