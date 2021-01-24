@@ -1,5 +1,3 @@
-
-const client = new discord.Client()
 module.exports = {
     commands: status,
     expectedArgs: '<status>',
@@ -8,7 +6,7 @@ module.exports = {
     maxArgs: 2,
     callback: (message, arguments, text) => {
         const content = message.content.replace('>status ', '')
-            client.user.setPresence({
+            .setPresence({
                 activity: {
                     name: content,
                     type: 2,
