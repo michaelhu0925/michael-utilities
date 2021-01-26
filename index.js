@@ -108,14 +108,6 @@ client.on('ready', async () => {
         })
     })
 
-    command(client, ['cc', 'clearchannel'], message => {
-        if (message.member.hasPermission('ADMINISTATOR')) {
-            message.channel.messages.fetch().then(results => {
-                message.channel.bulkDelete(results)
-            })
-        }
-    })
-
     command(client, 'status', message=> {
         const content = message.content.replace('>status ', '')
         if (message.member.hasPermission('ADMINISTATOR')) {
