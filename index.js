@@ -226,5 +226,3 @@ client.on('ready', async () => {
 
     eval(client)
 })
-
-client.login('NzkzNjk5NTAwODU0MDgzNjA1.X-wEQw.8mUIF10cRGCUABKUSt6cQaeDrUM')
