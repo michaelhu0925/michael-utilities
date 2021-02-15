@@ -4,7 +4,7 @@ module.exports = {
     minArgs: 1,
     maxArgs: 2,
     callback: (message, arguments, text) => {
-        message.channel.reply('Moving to the `Partnership` Category, Please Wait Patiently...')
+        message.channel.send('Moving to the `Partnership` Category, Please Wait Patiently...')
         message.channel.setParent('810032640921042985')
         message.channel.send('Successfully Moved The Thread Under the `Partnership` Category!')
     },
