@@ -4,7 +4,9 @@ module.exports = {
     minArgs: 1,
     maxArgs: 2,
     callback: (message, arguments, text) => {
+        message.channel.reply('Moving to the `Management` Category, Please Wait Patiently...')
         message.channel.setParent('810032281343229962')
+        message.channel.send('Successfully Moved The Thread Under the `Management` Category!')
     },
     permissions: 'KICK_MEMBERS',
   }
