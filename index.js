@@ -226,3 +226,5 @@ client.on('ready', async () => {
 
     eval(client)
 })
+
+client.login(process.env.token)
