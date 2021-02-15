@@ -1,6 +1,5 @@
 module.exports = {
-    commands: 'move',
-    expectedArgs: 'moderation',
+    commands: 'move moderation',
     permissionError: 'You do not have permissions to run this command!',
     minArgs: 1,
     maxArgs: 2,
