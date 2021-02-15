@@ -7,6 +7,6 @@ module.exports = {
         message.channel.send('Moving to the `Partnership` Category, Please Wait Patiently...')
         message.channel.setParent('810032640921042985')
         message.channel.send('Successfully Moved The Thread Under the `Partnership` Category!')
+        message.channel.send('<@&810858376543469600> **New Thread Has Been Moved Under The `Partnership` Category!**')
     },
-    permissions: 'KICK_MEMBERS',
   }

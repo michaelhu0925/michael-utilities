@@ -8,5 +8,4 @@ module.exports = {
         message.channel.setParent('801632645275582494')
         message.channel.send('Successfully Moved The Thread Under the `Pending` Category!')
     },
-    permissions: 'KICK_MEMBERS',
   }

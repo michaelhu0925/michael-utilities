@@ -7,6 +7,6 @@ module.exports = {
         message.channel.send('Moving to the `Moderation` Category, Please Wait Patiently...')
         message.channel.setParent('810032466814828554')
         message.channel.send('Successfully Moved The Thread Under the `Moderation` Category!')
+        message.channel.send('<@&810858336714620979> **New Thread Has Been Moved Under The `Moderation` Category!**')
     },
-    permissions: 'KICK_MEMBERS',
   }
