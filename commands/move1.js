@@ -1,6 +1,6 @@
 module.exports = {
     commands: 'move',
-    expectedArgs: 'move <category>',
+    expectedArgs: 'management',
     permissionError: 'You do not have permissions to run this command!',
     minArgs: 1,
     maxArgs: 2,
