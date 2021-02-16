@@ -1,9 +1,6 @@
 module.exports = {
     commands: ['k', 'kick'],
-    expectedArgs: '<@user> <reason>',
     permissionError: 'You do not have permissions to run this command!',
-    minArgs: 1,
-    maxArgs: 2,
     callback: (message, arguments, text) => {
         const { member, mentions } = message
         const tag = `<@${member.id}>`
