@@ -2,6 +2,7 @@ module.exports = {
     commands: 'restart',
     permissionError: 'You do not have permissions to run this command!',
     callback: (message, arguments, text) => {
+        const { member, mentions } = message
         const tag = `<@${member.id}>`
 
         message.channel.send('>s test test')
