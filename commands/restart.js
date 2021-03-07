@@ -1,8 +1,6 @@
 module.exports = {
     commands: 'restart',
     permissionError: 'You do not have permissions to run this command!',
-    minArgs: 1,
-    maxArgs: 2,
     callback: (message, arguments, text) => {
         const tag = `<@${member.id}>`
 
