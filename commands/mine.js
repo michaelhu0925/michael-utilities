@@ -6,7 +6,7 @@ module.exports = {
         const tag = `<@${member.id}>`
         const channel = bot.channels.cache.find(channel => channel.id === '818810812096315453')
 
-        message.channel.send(`${tag} Thanks for claiming this thread! This will count as your weekly ModMail Claims! (**No One Else Will Be Allowed To Response To This Thread, excluding Admins**)`)
+        message.channel.send(`${tag} Thanks for claiming this thread! This will count as your weekly ModMail Claims! (**No One Else Will Be Allowed To Response To This Thread, excluding Admins**)`);
         channel.send(`${tag} Have Claimed A ModMail Thread!`);
     },
   }
